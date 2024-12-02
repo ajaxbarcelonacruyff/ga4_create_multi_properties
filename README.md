@@ -40,12 +40,11 @@ GA4のプロパティ作成などをするには「Google Analytics Admin API」
 Serviceから「Google Analytics Admin API」を検索して追加。（Identifierはそのまま「AnalyticsAdmin」にしておきます。
 
 追加したら「Service」の下に「AnalyticsAdmin」が表示されます。無事Google Analytics Admin APIを追加できたら、createProperty()関数を記述します。AnalyticsAdmin.Properties.create関数でプロパティを作成します。
+
 参考：[https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/properties/create](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/properties/create)
 
 ## 作成したプロパティのIDを取得
 前述のvar property = AnalyticsAdmin.Properties.create(property) を実行後、propertyには新しく生成されたGA4プロパティが入るので、property.nameでプロパティIDを取得できますが、”properties/”が前に含まれているため取り除く必要があります。
 
 ### GA4プロパティの作成を繰り返して、プロパティIDをGoogle Sheetに追記
-getPropetiesConfig()関数で取得したプロパティID個数分、createProperty関数を実行して、結果を再びGoogle Sheetに追記します。
-mainを実行するとGoogle Sheetで記入したアカウントの下にGA4プロパティが作成され、そして、Google SheetのF列にプロパティIDが追記されている事を確認できます。
-プロパティ名やカテゴリ、タイムゾーン、通貨もきちんと反映されていればOKです。
+getPropetiesConfig()関数で取得したプロパティID個数分、createProperty関数を実行して、結果を再びGoogle Sheetに追記します。mainを実行するとGoogle Sheetで記入したアカウントの下にGA4プロパティが作成され、そして、Google SheetのF列にプロパティIDが追記されている事を確認できます。プロパティ名やカテゴリ、タイムゾーン、通貨もきちんと反映されていればOKです。
