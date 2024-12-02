@@ -1,0 +1,2 @@
+# ga4_create_multi_properties
+GA4で複数プロパティを自動作成
